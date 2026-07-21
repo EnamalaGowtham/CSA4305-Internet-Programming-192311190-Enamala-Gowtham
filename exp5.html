@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Based on Time</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            transition: background-color 1s;
+        }
+        h1 {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="message"></h1>
+
+<script>
+    function changeBackground() {
+        const hour = new Date().getHours();
+        const body = document.body;
+        const message = document.getElementById("message");
+
+        if (hour >= 5 && hour < 12) {
+            body.style.backgroundColor = "#FFD54F"; // Morning - Yellow
+            message.innerHTML = "Good Morning ☀️";
+        } 
+        else if (hour >= 12 && hour < 17) {
+            body.style.backgroundColor = "#4FC3F7"; // Afternoon - Blue
+            message.innerHTML = "Good Afternoon 🌤️";
+        } 
+        else if (hour >= 17 && hour < 20) {
+            body.style.backgroundColor = "#FF8A65"; // Evening - Orange
+            message.innerHTML = "Good Evening 🌇";
+        } 
+        else {
+            body.style.backgroundColor = "#263238"; // Night - Dark Gray
+            message.innerHTML = "Good Night 🌙";
+        }
+    }
+
+    // Run when page loads
+    changeBackground();
+</script>
+
+</body>
+</html>
