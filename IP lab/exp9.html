@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Built-in JavaScript Objects</title>
+</head>
+<body>
+
+<h2>Built-in JavaScript Objects</h2>
+
+<button onclick="showObjects()">Show Details</button>
+
+<p id="result"></p>
+
+<script>
+function showObjects() {
+    let now = new Date();               // Date Object
+    let randomNum = Math.random();      // Math Object
+    let squareRoot = Math.sqrt(64);     // Math Object
+    let text = "JavaScript";            // String Object
+
+    document.getElementById("result").innerHTML =
+        "Current Date & Time: " + now + "<br>" +
+        "Random Number: " + randomNum + "<br>" +
+        "Square Root of 64: " + squareRoot + "<br>" +
+        "String Length: " + text.length;
+}
+</script>
+
+</body>
+</html>
